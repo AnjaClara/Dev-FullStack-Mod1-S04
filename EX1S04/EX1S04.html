@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Caixa Registradora</h1>
+    <form>
+      <h2>Adicionar Produto</h2>
+      <label>Código de Barra:</label>
+      <input type="number" id="codigoBarra" required>
+      <br>
+      <label>Preço:</label>
+      <input type="number" id="preco" step="0.01" required>
+      <br>
+      <label>Nome:</label>
+      <input type="text" id="nome" required>
+      <br>
+      <button type="button" id="adicionarProdutoBtn">Adicionar Produto</button>
+    </form>
+    <div id="produtosAdicionados"></div>
+    <form>
+      <h2>Iniciar Atendimento</h2>
+      <label>Nome do Cliente:</label>
+      <input type="text" id="nomeCliente" required>
+      <br>
+      <button type="button" id="iniciarAtendimentoBtn">Iniciar Atendimento</button>
+    </form>
+    <form>
+      <h2>Adicionar Item à Conta</h2>
+      <label>Código de Barra:</label>
+      <input type="number" id="codigoBarraItem" required>
+      <br>
+      <label>Quantidade:</label>
+      <input type="number" id="quantidade" min="1" value="1" required>
+      <br>
+      <button type="button" id="adicionarItemBtn">Adicionar Item</button>
+    </form>
+    <form>
+      <h2>Calcular Total da Conta</h2>
+      <button type="button" id="calcularTotalBtn">Calcular Total</button>
+    </form>
+    <form>
+      <h2>Fechar Conta</h2>
+      <label>Dinheiro:</label>
+      <input type="number" id="dinheiro" step="0.01" required>
+      <br>
+      <button type="button" id="fecharContaBtn">Fechar Conta</button>
+    </form>
+    <p id="resultado"></p>
+  <script src="./EX1S04.js"></script>
+</body>
+
+</html>
