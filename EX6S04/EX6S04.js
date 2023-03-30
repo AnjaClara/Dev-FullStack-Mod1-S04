@@ -1,6 +1,6 @@
 class CaixaRegistradora {
   constructor() {
-    this.produtos = [];
+    this.produtos = this.carregarProdutos();
     this.cliente = null;
     this.conta = {};
   }
@@ -8,6 +8,7 @@ class CaixaRegistradora {
   adicionarProduto(codigoBarra, preco, nome, quantidadeEstoque = 0) {
     const novoProduto = { codigoBarra, preco, nome, quantidadeEstoque };
     this.produtos.push(novoProduto);
+    this.salvarProdutos();
     return novoProduto;
   }
 
@@ -60,9 +61,20 @@ class CaixaRegistradora {
     this.produtos = [];
     this.cliente = null;
     this.conta = {};
+    this.salvarProdutos();
     return { totalConta, troco };
   }
+
+  salvarProdutos() {
+    localStorage.setItem("produtos", JSON.stringify(this.produtos));
+  }
+
+  carregarProdutos() {
+    const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+    return produtos;
+  }
 }
+
 const caixa = new CaixaRegistradora();
 
 function adicionarProdutoAoHTML(produto) {
